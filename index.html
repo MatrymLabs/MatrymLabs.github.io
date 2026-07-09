@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MatrymLabs — AI-assisted Python engineering</title>
+<meta name="description" content="Retired Air Force systems thinker building AI-assisted Python engineering — proven with tests, quality gates, and evidence. Flagship: CodeForge." />
+<style>
+  :root{
+    --bg:#0b0f14; --panel:#121a23; --line:#1e2a36; --text:#c9d4e0; --muted:#7f8fa0;
+    --brass:#e0b355; --blue:#5aa0e0; --green:#4caf7d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px}
+  .kicker{color:var(--brass);letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  h1{font-size:2.15rem;line-height:1.15;margin:.5rem 0 .4rem}
+  h1 .mono{color:var(--brass)}
+  .lead{color:var(--muted);font-size:1.12rem;max-width:640px}
+  .thesis{margin-top:22px;padding:16px 18px;background:var(--panel);border:1px solid var(--line);
+    border-left:3px solid var(--brass);border-radius:6px;font-size:.98rem}
+  section{padding:40px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:1.35rem;margin:0 0 4px} .sub{color:var(--muted);margin:0 0 20px;font-size:.95rem}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin:14px 0}
+  .card h3{margin:0 0 6px;font-size:1.15rem}
+  .btns{margin:18px 0 4px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:9px 16px;border-radius:6px;font-weight:600;font-size:.92rem;border:1px solid var(--line)}
+  .btn.primary{background:var(--brass);color:#1a1206;border-color:var(--brass)}
+  .btn.primary:hover{filter:brightness(1.08);text-decoration:none}
+  .btn.ghost:hover{border-color:var(--blue)}
+  ul.tight{margin:10px 0;padding-left:20px} ul.tight li{margin:5px 0}
+  .badge{display:inline-block;font:600 .72rem/1 ui-monospace,monospace;color:var(--green);
+    border:1px solid var(--green);border-radius:20px;padding:5px 11px;margin:3px 6px 3px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px} @media(max-width:620px){.grid{grid-template-columns:1fr}}
+  .note{color:var(--muted);font-size:.88rem}
+  footer{padding:34px 0 60px;color:var(--muted);font-size:.9rem}
+  .green{color:var(--green)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">MatrymLabs</div>
+  <h1>Software engineering is more than typing.<br><span class="mono">I build the machine that proves the code works.</span></h1>
+  <p class="lead">Retired Air Force systems thinker, now building software the way I ran mission
+  systems — with checklists, readiness checks, quality gates, and evidence.</p>
+  <div class="thesis">
+    <strong>How I work:</strong> AI is the force multiplier for creativity; automation runs the
+    health checks; <strong>engineering judgment makes the call</strong>; and <strong>evidence proves
+    the work.</strong> What makes it engineering — not "AI wrote it" — is the same thing that proves any
+    engineering: the tests, the gates, and the green CI you can run yourself.
+  </div>
+</header>
+
+<section>
+  <div class="kicker">Flagship</div>
+  <h2>CodeForge — a self-auditing Python engine</h2>
+  <p class="sub">A Python-native multiplayer MUD (text game) engine that doubles as an engineering workshop.</p>
+  <div class="card">
+    <h3>An engine that grades itself</h3>
+    <p>CodeForge files every object — rooms, commands, and its own code modules — in a
+    classification registry, grades each against a fixed quality bar, and computes one verdict.
+    So "how professional is this repo right now?" has a <span class="green">computed answer, not an opinion.</span></p>
+    <p>
+      <span class="badge">board: 72/72 pass ✓</span>
+      <span class="badge">CI green</span>
+      <span class="badge">Docker</span>
+      <span class="badge">property-based tests</span>
+      <span class="badge">live demo</span>
+      <span class="badge">secret + SAST scanning</span>
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="https://codeforge-demo-1kcu.onrender.com/">▶ Play the live demo</a>
+      <a class="btn ghost" href="https://github.com/MatrymLabs/codeforge">Source on GitHub</a>
+    </div>
+    <p class="note">The demo runs on a free tier that sleeps when idle — the first load may take ~30–60s to wake.</p>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Proof of skill</div>
+  <h2>What CodeForge demonstrates</h2>
+  <p class="sub">Every item below is verifiable in the repo — run <code>make check</code> yourself.</p>
+  <div class="grid">
+    <div class="card"><h3>Architecture</h3><p>A pure-function engine tick with thin drivers (terminal · TCP · WebSocket). State is canonical; text is a projection.</p></div>
+    <div class="card"><h3>Testing discipline</h3><p>Unit twins per module, property-based (Hypothesis), real-socket + WebSocket integration, an end-to-end smoke test.</p></div>
+    <div class="card"><h3>Self-auditing systems</h3><p>A classification registry + quality gates + a project dashboard, all computed from filed state — no second copy to drift.</p></div>
+    <div class="card"><h3>Security posture</h3><p>Rank-gated admin, salted pbkdf2 auth, an allowlisted command runner (never raw shell), SAST + dependency + secret scanning.</p></div>
+    <div class="card"><h3>Delivery mechanics</h3><p>CI + Docker + a live browser demo + Conventional Commits + a changelog; every merge green.</p></div>
+    <div class="card"><h3>Systems thinking (20 yrs USAF)</h3><p>Readiness checks, evidence trails, controlled changes, QA gates — mission-system discipline applied to software.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Case study</div>
+  <h2>Debugging like a field engineer — measured, not guessed</h2>
+  <div class="card">
+    <p><strong>Problem.</strong> While walking the whole engine end-to-end over a live socket, every
+    command felt sluggish — a flat ~40&nbsp;ms, whether it did real work or not.</p>
+    <p><strong>Investigation.</strong> A uniform delay across cheap and expensive commands isn't compute —
+    it's the network. The gateway never set <code>TCP_NODELAY</code>, so each one-line reply stalled ~40&nbsp;ms
+    on Nagle + delayed-ACK.</p>
+    <p><strong>Fix &amp; proof.</strong> One <code>setsockopt</code>. Re-measured with the same end-to-end test:
+    <span class="green">~40&nbsp;ms → ~1&nbsp;ms per command</span> — a ~20–40× latency drop for every client.
+    Same method later cut the test suite 2.3× by finding the one thing that was actually slow.</p>
+    <p class="note">The point isn't the fix — it's the method: measure, find the one thing that's slow, fix it, re-measure. No shotgun optimization.</p>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">More</div>
+  <h2>Other public work</h2>
+  <ul class="tight">
+    <li><a href="https://github.com/MatrymLabs/codeforge-evennia">codeforge-evennia</a> — the framework-based predecessor; shows the iteration that led to the framework-free rewrite.</li>
+    <li><a href="https://github.com/MatrymLabs/learning">learning</a> — a public practice log; learning in the open.</li>
+  </ul>
+  <p class="note">Compliance / AI-triage tooling (a Claude-powered log-triage service and a federal-guidance
+  regulatory-memory system) is kept in a private back room and can be reviewed on request.</p>
+</section>
+
+<footer>
+  <p><a href="https://github.com/MatrymLabs">github.com/MatrymLabs</a> · Josh / Matrym</p>
+  <p class="note">AI-assisted, engineering-directed. Readiness, not certification — no compliance or
+  production-readiness is claimed beyond what the tests and gates prove.</p>
+</footer>
+
+</div>
+</body>
+</html>
