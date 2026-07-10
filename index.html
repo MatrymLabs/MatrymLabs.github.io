@@ -78,7 +78,7 @@
       <a class="btn primary" href="https://codeforge-demo-1kcu.onrender.com/">▶ Play the live demo</a>
       <a class="btn ghost" href="https://github.com/MatrymLabs/codeforge">Source on GitHub</a>
     </div>
-    <p class="note">The demo runs on a free tier that sleeps when idle - the first load may take ~30–60s to wake.</p>
+    <p class="note">The demo runs on a free tier that sleeps when idle - the first load may take ~30-60s to wake.</p>
   </div>
 </section>
 
@@ -127,7 +127,7 @@
     it's the network. The gateway never set <code>TCP_NODELAY</code>, so each one-line reply stalled ~40&nbsp;ms
     on Nagle + delayed-ACK.</p>
     <p><strong>Fix &amp; proof.</strong> One <code>setsockopt</code>. Re-measured with the same end-to-end test:
-    <span class="green">~40&nbsp;ms → ~1&nbsp;ms per command</span> - a ~20–40× latency drop for every client.
+    <span class="green">~40&nbsp;ms → ~1&nbsp;ms per command</span> - a ~20-40× latency drop for every client.
     Same method later cut the test suite 2.3× by finding the one thing that was actually slow.</p>
     <p class="note">The point isn't the fix - it's the method: measure, find the one thing that's slow, fix it, re-measure. No shotgun optimization.</p>
   </div>
