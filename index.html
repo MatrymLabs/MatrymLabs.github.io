@@ -67,7 +67,7 @@
     classification registry, grades each against a fixed quality bar, and computes one verdict.
     So "how professional is this repo right now?" has a <span class="green">computed answer, not an opinion.</span></p>
     <p>
-      <span class="badge">board: 72/72 pass ✓</span>
+      <span class="badge">self-grading board: all pass ✓</span>
       <span class="badge">CI green</span>
       <span class="badge">Docker</span>
       <span class="badge">property-based tests</span>
@@ -93,6 +93,27 @@
     <div class="card"><h3>Security posture</h3><p>Rank-gated admin, salted pbkdf2 auth, an allowlisted command runner (never raw shell), SAST + dependency + secret scanning.</p></div>
     <div class="card"><h3>Delivery mechanics</h3><p>CI + Docker + a live browser demo + Conventional Commits + a changelog; every merge green.</p></div>
     <div class="card"><h3>Systems thinking (20 yrs USAF)</h3><p>Readiness checks, evidence trails, controlled changes, QA gates — mission-system discipline applied to software.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">The proof-tool</div>
+  <h2>forge-audit — proof, not assertion</h2>
+  <p class="sub">A portfolio makes a claim: <em>this engineer uses AI as a force multiplier, wrapped in
+  automated evidence and quality gates.</em> Rather than assert it, I built the tool that <strong>proves</strong> it.</p>
+  <div class="card">
+    <h3>Point it at a repo; it grades the repo</h3>
+    <p><a href="https://github.com/MatrymLabs/forge-audit">forge-audit</a> runs the quality gates
+    (ruff · mypy · pytest&nbsp;--cov · bandit · pip-audit) on any repository — using that repo's <em>own</em>
+    toolchain — and emits a machine-checkable JSON scorecard (<code>pass · watchlist · fail</code>) graded
+    against objective stage thresholds. The network and the toolchain sit behind mockable seams, so its
+    own tests never touch either.</p>
+    <p>Its reading of CodeForge (intermediate stage): <span class="green">lint · typecheck · tests (94% coverage) ·
+    security · dependencies all pass</span>, 12 merged PRs, one honest <em>watchlist</em> note. It grades the
+    flagship by the same rule it grades anything else — <strong>no claim without correspondence.</strong></p>
+    <div class="btns">
+      <a class="btn ghost" href="https://github.com/MatrymLabs/forge-audit">Source on GitHub</a>
+    </div>
   </div>
 </section>
 
