@@ -87,7 +87,7 @@
   <h2>What CodeForge demonstrates</h2>
   <p class="sub">Every item below is verifiable in the repo - run <code>make check</code> yourself.</p>
   <div class="grid">
-    <div class="card"><h3>Architecture</h3><p>A pure-function engine tick with thin drivers (terminal · TCP · WebSocket). State is canonical; text is a projection.</p></div>
+    <div class="card"><h3>Architecture &amp; design</h3><p>A pure-function engine tick with thin drivers (terminal · TCP · WebSocket), documented with C4 diagrams and ADRs and a catalog of reusable, cross-domain parts. State is canonical; text is a projection.</p></div>
     <div class="card"><h3>Testing discipline</h3><p>Unit twins per module, property-based (Hypothesis), real-socket + WebSocket integration, an end-to-end smoke test.</p></div>
     <div class="card"><h3>Self-auditing systems</h3><p>A classification registry + quality gates + a project dashboard, all computed from filed state - no second copy to drift.</p></div>
     <div class="card"><h3>Security posture</h3><p>Rank-gated admin, salted pbkdf2 auth, an allowlisted command runner (never raw shell), SAST + dependency + secret scanning.</p></div>
@@ -105,12 +105,16 @@
     <h3>Point it at a repo; it grades the repo</h3>
     <p><a href="https://github.com/MatrymLabs/forge-audit">forge-audit</a> runs the quality gates
     (ruff · mypy · pytest&nbsp;--cov · bandit · pip-audit) on any repository - using that repo's <em>own</em>
-    toolchain - and emits a machine-checkable JSON scorecard (<code>pass · watchlist · fail</code>) graded
-    against objective stage thresholds. The network and the toolchain sit behind mockable seams, so its
+    toolchain and declared scope - and emits a machine-checkable JSON scorecard (<code>pass · watchlist · fail</code>)
+    graded against objective stage thresholds. The network and the toolchain sit behind mockable seams, so its
     own tests never touch either.</p>
-    <p>Its reading of CodeForge (intermediate stage): <span class="green">lint · typecheck · tests (94% coverage) ·
-    security · dependencies all pass</span>, 12 merged PRs, one honest <em>watchlist</em> note. It grades the
-    flagship by the same rule it grades anything else - <strong>no claim without correspondence.</strong></p>
+    <p>Its reading of CodeForge: <span class="green">lint · typecheck · tests · security · dependencies · CI ·
+    collaboration all pass</span> - a clean scorecard, graded by the same rule it grades anything else:
+    <strong>no claim without correspondence.</strong> Coverage sits above the advanced bar; the live numbers
+    are the CI badge, not a figure typed here (which would only drift).</p>
+    <p><strong>Fleet mode</strong> points it at every repo on the ship in one run and rolls the per-repo
+    verdicts into a single fleet verdict - platform-style tooling, not a one-repo script. CodeForge (public)
+    is graded above; the private repos are audited by the same tool and shared on request.</p>
     <div class="btns">
       <a class="btn ghost" href="https://github.com/MatrymLabs/forge-audit">Source on GitHub</a>
     </div>
