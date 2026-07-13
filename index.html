@@ -173,14 +173,16 @@
     GNN training, PyCharm run-configs, Nsight wrappers, a layered tuning guide, and CI. Where a lot of ML
     portfolios quietly claim GPU numbers they never ran, this one draws the line in the README:
     the CPU paths (config/timing logic, the <code>full_batch_forward</code> benchmark, CPU <code>torch.profiler</code>)
-    are <span class="green">run and verified</span> on the author's GPU-less host; the GPU paths are authored,
-    not measured, and labelled as such.</p>
+    are <span class="green">run and verified</span> on the author's GPU-less primary host; the GPU benchmark and
+    profiler paths are <span class="green">verified on a separate RTX 4090</span> (a dated snapshot, not a live
+    claim); and the Nsight wrappers stay labelled authored-not-run. Every line says which host measured what.</p>
     <p>Same thesis as everything else on this page: <strong>no claim without correspondence.</strong>
     The honesty is the feature.</p>
     <p>
       <span class="badge">PyTorch Geometric</span>
       <span class="badge">profiling + benchmarks</span>
       <span class="badge">CPU-verified</span>
+      <span class="badge">RTX 4090 verified</span>
       <span class="badge">CI green</span>
     </p>
     <div class="btns">
