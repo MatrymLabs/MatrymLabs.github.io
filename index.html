@@ -138,6 +138,58 @@
 </section>
 
 <section>
+  <div class="kicker">Full-stack</div>
+  <h2>CodeForge Console - the front/back split, typed end to end</h2>
+  <p class="sub">The decoupled architecture employers ask for: a React front end talking to a Python API over a typed contract.</p>
+  <div class="card">
+    <h3>A separate front end, not a server-rendered page</h3>
+    <p><a href="https://github.com/MatrymLabs/codeforge-console">codeforge-console</a> is a
+    <strong>React + TypeScript + Next.js</strong> single-page app that consumes CodeForge's typed
+    <code>/api/status</code> contract and renders its live evidence board (career · QA · hardware · performance).
+    The TypeScript types mirror the FastAPI/Pydantic models, so the front/back seam is typed on both sides;
+    one fetch layer is the only door to the API, and an honest banner shows when the API is down.</p>
+    <p>Tests run on Vitest + React Testing Library with the network mocked - the same seam discipline as the
+    Python repos - and CI runs <span class="green">lint · typecheck · test · build</span> green on every merge.</p>
+    <p>
+      <span class="badge">React · TypeScript · Next.js</span>
+      <span class="badge">typed API contract</span>
+      <span class="badge">network-mocked tests</span>
+      <span class="badge">CI green</span>
+    </p>
+    <div class="btns">
+      <a class="btn ghost" href="https://github.com/MatrymLabs/codeforge-console">Source on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">Performance engineering</div>
+  <h2>pyg-perf-lab - GNN performance, measured honestly</h2>
+  <p class="sub">Profilers and benchmarks for graph-neural-network training, built to one rule: nothing is claimed as measured that was not actually run.</p>
+  <div class="card">
+    <h3>Measured, and honest about what was measured</h3>
+    <p><a href="https://github.com/MatrymLabs/pyg-perf-lab">pyg-perf-lab</a> is a
+    <strong>PyTorch Geometric</strong> performance-engineering package: runnable profilers and benchmarks for
+    GNN training, PyCharm run-configs, Nsight wrappers, a layered tuning guide, and CI. Where a lot of ML
+    portfolios quietly claim GPU numbers they never ran, this one draws the line in the README:
+    the CPU paths (config/timing logic, the <code>full_batch_forward</code> benchmark, CPU <code>torch.profiler</code>)
+    are <span class="green">run and verified</span> on the author's GPU-less host; the GPU paths are authored,
+    not measured, and labelled as such.</p>
+    <p>Same thesis as everything else on this page: <strong>no claim without correspondence.</strong>
+    The honesty is the feature.</p>
+    <p>
+      <span class="badge">PyTorch Geometric</span>
+      <span class="badge">profiling + benchmarks</span>
+      <span class="badge">CPU-verified</span>
+      <span class="badge">CI green</span>
+    </p>
+    <div class="btns">
+      <a class="btn ghost" href="https://github.com/MatrymLabs/pyg-perf-lab">Source on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="kicker">More</div>
   <h2>Other public work</h2>
   <ul class="tight">
