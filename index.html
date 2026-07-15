@@ -109,7 +109,7 @@
     graded against objective stage thresholds. The network and the toolchain sit behind mockable seams, so its
     own tests never touch either.</p>
     <p>Its reading of CodeForge: <span class="green">lint · typecheck · tests · security · dependencies · CI ·
-    collaboration all pass</span> - a clean scorecard, graded by the same rule it grades anything else:
+    collaboration · performance all pass</span> - a clean scorecard, graded by the same rule it grades anything else:
     <strong>no claim without correspondence.</strong> Coverage sits above the advanced bar; the live numbers
     are the CI badge, not a figure typed here (which would only drift).</p>
     <p><strong>Fleet mode</strong> points it at every repo on the ship in one run and rolls the per-repo
@@ -117,6 +117,29 @@
     is graded above; the private repos are audited by the same tool and shared on request.</p>
     <div class="btns">
       <a class="btn ghost" href="https://github.com/MatrymLabs/forge-audit">Source on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="kicker">The Hardware Store</div>
+  <h2>Reusable parts, proven across the fleet - one shipped to PyPI</h2>
+  <p class="sub">The claim isn't "I wrote a MUD." It's that a mechanism <em>proven in the game</em> becomes a
+  part I reuse in real software. So I proved it - across repos, and out to a package anyone can install.</p>
+  <div class="card">
+    <h3>Proven, not just cataloged</h3>
+    <p>Four patterns from CodeForge's parts catalog are re-implemented and running in the fleet's industry
+    repos - a <strong>retry policy</strong>, a <strong>circuit breaker</strong>, a <strong>token-bucket rate
+    limiter</strong>, and a <strong>tamper-evident hash-chained ledger</strong> - each harvested in the
+    consumer's own voice with recorded provenance: no shared import, zero coupling. The same engineering
+    logic, wearing a different professional outfit in each repo.</p>
+    <p>The ledger earned a standalone release: <span class="green"><a
+    href="https://pypi.org/project/matrym-hashchain/">matrym-hashchain</a> on PyPI</span> - MIT,
+    stdlib-only, CI on Python 3.10-3.13. Don't take my word for it: <code>pip install matrym-hashchain</code>.
+    One pattern, proven in the game, then reused in real software and shipped as a package.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://pypi.org/project/matrym-hashchain/">matrym-hashchain on PyPI</a>
+      <a class="btn ghost" href="https://github.com/MatrymLabs/matrym-hashchain">Source on GitHub</a>
     </div>
   </div>
 </section>
