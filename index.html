@@ -138,7 +138,11 @@
     <p>It even grades a repo it did <em>not</em> build <strong>honestly</strong>: when it lacks that repo's
     dev environment it marks the affected gate <span class="mono">not&nbsp;graded&nbsp;here</span>, never a
     failure - it will not call a green-CI project broken just because a dependency is missing. The rule it holds
-    itself to is the rule it grades by: <strong>no claim without correspondence.</strong></p>
+    itself to is the rule it grades by: <strong>no claim without correspondence.</strong> Proof, not a promise:
+    it graded <a href="https://github.com/MatrymLabs/forge-audit/tree/main/docs/in_the_wild">three well-known
+    repos it did not build</a> (httpx, rich, tenacity) with their real dev environments, scorecards committed -
+    passing what is clean, abstaining where it lacks the environment, respecting each repo's own toolchain, and
+    flagging httpx's one high finding (its RFC-mandated digest-auth hash) for a human to judge.</p>
     <p>Its reading of CodeForge: <span class="green">lint · typecheck · tests · security · dependencies · CI ·
     collaboration · performance all pass</span> - a clean scorecard, graded by the same rule it grades anything else:
     <strong>no claim without correspondence.</strong> Coverage sits above the advanced bar; the live numbers
