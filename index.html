@@ -83,6 +83,33 @@
 </section>
 
 <section>
+  <div class="kicker">Backend &amp; platform engineering</div>
+  <h2>The parts a back-end role screens for - running in the flagship</h2>
+  <p class="sub">Not a diagram of what I could build: concurrency, persistence, an API surface, and a
+  security boundary, each already carrying a live text game you can log into. Every claim below is a file
+  in the repo, proven by a test.</p>
+  <div class="grid">
+    <div class="card"><h3>Concurrency &amp; networking</h3><p>Two live network gateways behind one engine
+    tick: a <strong>threaded TCP server</strong> real MUD clients (Mudlet · telnet · nc) connect to, and an
+    <strong>asyncio WebSocket gateway</strong> (a queue-backed pump) you click into in the browser.
+    Hand-rolled telnet negotiation (IAC WILL/WONT ECHO) blacks out password entry; a
+    <code>TCP_NODELAY</code> fix cut per-command latency <span class="green">~20-40×</span>.</p></div>
+    <div class="card"><h3>Persistence &amp; data modeling</h3><p>SQLite through the <strong>SQLAlchemy 2.0</strong>
+    typed ORM (<code>Mapped</code> / <code>mapped_column</code>). Records persist only minimal facts; stats
+    recompute on restore, and a <strong>parity test pins derive-on-restore == grow-in-play</strong> so the two
+    paths can never silently drift.</p></div>
+    <div class="card"><h3>API surface</h3><p>A <strong>FastAPI</strong> admin and status surface behind
+    owner-account Basic auth, exposing a typed <code>/api/status</code> contract that a separate React client
+    consumes over a Pydantic-mirrored seam - the decoupled front/back split, typed on both sides.</p></div>
+    <div class="card"><h3>Security boundary</h3><p>Passwords stored as salted <strong>pbkdf2-sha256</strong>
+    (600k iterations, constant-time compare), never in plaintext; <strong>authorization checked before
+    capability</strong> on every admin verb; an allowlisted command console instead of raw shell.</p></div>
+  </div>
+  <p class="note">State is canonical; text is only a projection - renderers never mutate the world. The engine
+  tick is the single door, and every driver (terminal · TCP · WebSocket) is a thin caller of it.</p>
+</section>
+
+<section>
   <div class="kicker">Proof of skill</div>
   <h2>What CodeForge demonstrates</h2>
   <p class="sub">Every item below is verifiable in the repo - run <code>make check</code> yourself.</p>
