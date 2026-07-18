@@ -108,6 +108,10 @@
     toolchain and declared scope - and emits a machine-checkable JSON scorecard (<code>pass · watchlist · fail</code>)
     graded against objective stage thresholds. The network and the toolchain sit behind mockable seams, so its
     own tests never touch either.</p>
+    <p>It even grades a repo it did <em>not</em> build <strong>honestly</strong>: when it lacks that repo's
+    dev environment it marks the affected gate <span class="mono">not&nbsp;graded&nbsp;here</span>, never a
+    failure - it will not call a green-CI project broken just because a dependency is missing. The rule it holds
+    itself to is the rule it grades by: <strong>no claim without correspondence.</strong></p>
     <p>Its reading of CodeForge: <span class="green">lint · typecheck · tests · security · dependencies · CI ·
     collaboration · performance all pass</span> - a clean scorecard, graded by the same rule it grades anything else:
     <strong>no claim without correspondence.</strong> Coverage sits above the advanced bar; the live numbers
