@@ -131,26 +131,32 @@
   automated evidence and quality gates.</em> Rather than assert it, I built the tool that <strong>proves</strong> it.</p>
   <div class="card">
     <h3>Point it at a repo; it grades the repo</h3>
-    <p><a href="https://github.com/MatrymLabs/forge-audit">forge-audit</a> runs the quality gates
-    (ruff · mypy · pytest&nbsp;--cov · bandit · pip-audit) on any repository - using that repo's <em>own</em>
-    toolchain and declared scope - and emits a machine-checkable JSON scorecard (<code>pass · watchlist · fail</code>)
-    graded against objective stage thresholds. The network and the toolchain sit behind mockable seams, so its
-    own tests never touch either.</p>
+    <p><a href="https://github.com/MatrymLabs/forge-audit">forge-audit</a> runs the quality gates on any
+    repository <strong>in that repo's own ecosystem</strong> - a Python repo through ruff · mypy ·
+    pytest&nbsp;--cov · bandit · pip-audit, a Node repo through its own <code>package.json</code> scripts
+    plus <code>npm audit</code> - using that repo's own toolchain and declared scope, and emits a
+    machine-checkable JSON scorecard (<code>pass · watchlist · fail</code>) graded against objective stage
+    thresholds. The network and the toolchain sit behind mockable seams, so its own tests never touch either.</p>
     <p>It even grades a repo it did <em>not</em> build <strong>honestly</strong>: when it lacks that repo's
     dev environment it marks the affected gate <span class="mono">not&nbsp;graded&nbsp;here</span>, never a
     failure - it will not call a green-CI project broken just because a dependency is missing. The rule it holds
     itself to is the rule it grades by: <strong>no claim without correspondence.</strong> Proof, not a promise:
-    it graded <a href="https://github.com/MatrymLabs/forge-audit/tree/main/docs/in_the_wild">three well-known
+    it graded <a href="https://github.com/MatrymLabs/forge-audit/tree/main/docs/in_the_wild">well-known
     repos it did not build</a> (httpx, rich, tenacity) with their real dev environments, scorecards committed -
     passing what is clean, abstaining where it lacks the environment, respecting each repo's own toolchain, and
-    flagging httpx's one high finding (its RFC-mandated digest-auth hash) for a human to judge.</p>
+    flagging httpx's one high finding (its RFC-mandated digest-auth hash) for a human to judge. A second panel
+    runs the deepened license scan against six more (numpy, pytest, pydantic, flask, requests, Pillow) with
+    <strong>zero false positives</strong> - and abstains on Pillow's unrecognized license rather than guess.</p>
     <p>Its reading of CodeForge: <span class="green">lint · typecheck · tests · security · dependencies · CI ·
     collaboration · performance · readme · license all pass</span> - a clean ten-dimension scorecard, graded by
-    the same rule it grades anything else: <strong>no claim without correspondence.</strong> The newest dimension,
-    <strong>license &amp; provenance</strong>, is one forge-audit grew while auditing my own clean-room code
-    archaeology: it reads a repo's license and third-party notices and vouches for a <em>compliance</em> role
-    signal. Coverage sits above the advanced bar; the live numbers are the CI badge, not a figure typed here
-    (which would only drift).</p>
+    the same rule it grades anything else: <strong>no claim without correspondence.</strong> The deepest dimension,
+    <strong>license &amp; supply-chain compliance</strong>, forge-audit grew into four layers: it detects the
+    repo's license, scans every source file's SPDX header for a conflicting one, flags GPL/AGPL <em>dependencies</em>
+    in a permissive project, and validates a committed CycloneDX/SPDX SBOM - then cross-checks it against what is
+    actually installed to catch a stale one. A malformed or drifted SBOM is false assurance, so it drops to
+    watchlist rather than credit it; on clean code it stays quiet, because for a compliance check <em>zero false
+    positives is the point</em>. Coverage sits above the advanced bar; the live numbers are the CI badge, not a
+    figure typed here (which would only drift).</p>
     <p><strong>Fleet mode</strong> points it at every repo on the ship in one run and rolls the per-repo
     verdicts into a single fleet verdict - platform-style tooling, not a one-repo script. CodeForge (public)
     is graded above; the private repos are audited by the same tool and shared on request.</p>
