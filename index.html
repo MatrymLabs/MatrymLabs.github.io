@@ -120,6 +120,7 @@
     <div class="card"><h3>Security posture</h3><p>Rank-gated admin, salted pbkdf2 auth, an allowlisted command runner (never raw shell), SAST + dependency + secret scanning.</p></div>
     <div class="card"><h3>Delivery mechanics</h3><p>CI + Docker + a live browser demo + Conventional Commits + a changelog; every merge green.</p></div>
     <div class="card"><h3>Systems thinking (20 yrs USAF)</h3><p>Readiness checks, evidence trails, controlled changes, QA gates - mission-system discipline applied to software.</p></div>
+    <div class="card"><h3>Licensing-first engineering</h3><p>A clean-room study of 1990s open-source engines: I classified each by its <strong>license</strong>, kept a provenance trail, and harvested a couple of mechanisms as <em>original</em> parts (a beat-driven scheduler, a delay queue) - none copied, each recorded. The one core-model change it needed - object instancing - is governed by a written keel record. <span class="green">Rights and provenance treated as engineering, not an afterthought.</span></p></div>
   </div>
 </section>
 
@@ -144,9 +145,12 @@
     passing what is clean, abstaining where it lacks the environment, respecting each repo's own toolchain, and
     flagging httpx's one high finding (its RFC-mandated digest-auth hash) for a human to judge.</p>
     <p>Its reading of CodeForge: <span class="green">lint · typecheck · tests · security · dependencies · CI ·
-    collaboration · performance all pass</span> - a clean scorecard, graded by the same rule it grades anything else:
-    <strong>no claim without correspondence.</strong> Coverage sits above the advanced bar; the live numbers
-    are the CI badge, not a figure typed here (which would only drift).</p>
+    collaboration · performance · readme · license all pass</span> - a clean ten-dimension scorecard, graded by
+    the same rule it grades anything else: <strong>no claim without correspondence.</strong> The newest dimension,
+    <strong>license &amp; provenance</strong>, is one forge-audit grew while auditing my own clean-room code
+    archaeology: it reads a repo's license and third-party notices and vouches for a <em>compliance</em> role
+    signal. Coverage sits above the advanced bar; the live numbers are the CI badge, not a figure typed here
+    (which would only drift).</p>
     <p><strong>Fleet mode</strong> points it at every repo on the ship in one run and rolls the per-repo
     verdicts into a single fleet verdict - platform-style tooling, not a one-repo script. CodeForge (public)
     is graded above; the private repos are audited by the same tool and shared on request.</p>
